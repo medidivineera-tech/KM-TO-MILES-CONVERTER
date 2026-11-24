@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KM to Miles Converter</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .container {
+            background-color: white;
+            width: 500px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        h1 {
+            font-size: 38px;
+            color: darkblue;
+        }
+
+        label {
+            font-size: 25px;
+        }
+
+        input {
+            font-size: 24px;
+            padding: 12px;
+            margin: 20px;
+            width: 300px;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Kilometres to Miles Converter</h1>
+
+        <label>Enter Distance in Kilometres:</label>
+        <br>
+
+        <input type="number" id="km"
+        placeholder="Enter kilometres"
+        oninput="convert()">
+
+        <h2 id="result">Miles: 0</h2>
+    </div>
+
+    <script>
+        function convert() {
+            let km = document.getElementById("km").value;
+            let miles = km * 0.621;
+
+            document.getElementById("result").innerHTML =
+                "Miles: " + (km === "" ? "0" : miles.toFixed(3));
+        }
+    </script>
+
+</body>
+</html>
